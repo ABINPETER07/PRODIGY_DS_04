@@ -1,4 +1,5 @@
 Sentiment Analysis on Twitter Data
+
 This project analyzes tweet sentiments related to major brands using natural language processing. It uses polarity scoring to classify tweets into Positive, Negative, and Neutral, and visualizes both sentiment distribution and word usage.
 
 Dataset
