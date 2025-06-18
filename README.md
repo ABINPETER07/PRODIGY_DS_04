@@ -1,58 +1,68 @@
-Sentiment Analysis on Twitter Data
+#  Sentiment Analysis on Twitter Data
 
-This project analyzes tweet sentiments related to major brands using natural language processing. It uses polarity scoring to classify tweets into Positive, Negative, and Neutral, and visualizes both sentiment distribution and word usage.
+This project performs sentiment analysis on tweets using natural language processing techniques. It focuses on identifying the sentiment (Positive, Negative, or Neutral) of tweets related to specific brands/entities and visualizing the patterns using bar plots and word clouds.
 
-Dataset
+---
 
-File   : twitter_training.csv
-Columns:
+##  Dataset
 
-       ID: Tweet ID
-       Entity: Brand/Company name
-       Sentiment: Labeled sentiment (not used here)
-       Tweet: Actual tweet text
+- **File Used**: `twitter_training.csv`
+- **Format**: CSV
+- **Columns**:
+  - `ID`: Tweet ID
+  - `Entity`: Brand or company name (e.g., Facebook, Google)
+  - `Sentiment`: (Original sentiment label, not used in classification)
+  - `Tweet`: The actual tweet content
 
-Libraries Used
+---
 
-pandas,numpy
-nltk, textblob
-matplotlib,seaborn
-wordcloud
+##  Libraries Used
 
-Task Workflow
+- `pandas`
+- `numpy`
+- `nltk`
+- `textblob`
+- `matplotlib`
+- `seaborn`
+- `wordcloud`
 
-Data Loading
+---
 
-    Load twitter_training.csv with custom column names.
-    Clean NaN values in the Tweet column.
-Sentiment Analysis
+##  Project Workflow
 
-    Compute polarity scores using TextBlob.
-    Classify each tweet into Positive, Negative, or Neutral.
-Filtering by Entity
+### 1. Data Loading and Cleaning
+- Dataset is loaded and given custom column names.
+- Rows with missing tweets are dropped.
 
-    Select a brand (e.g., Facebook) to analyze individually.
-Visualization
+### 2. Sentiment Scoring
+- Sentiment polarity is computed using **TextBlob**.
+- Tweets are labeled as:
+  - **Positive** (polarity > 0)
+  - **Negative** (polarity < 0)
+  - **Neutral** (polarity == 0)
 
-    Bar chart of sentiment distribution using Seaborn
-    Word clouds for each sentiment category (Positive/Negative/Neutral)
+### 3. Brand-wise Analysis
+- A specific brand (e.g., `Facebook`) is filtered from the dataset.
+- Sentiment distribution is analyzed for that brand.
 
-Output Sample
+### 4. Visualizations
+- **Bar Plot** of sentiment counts using Seaborn.
+- **WordClouds** for each sentiment category to highlight frequent terms.
 
-Sentiment Distribution Bar Plot
+---
 
-3 WordClouds for:
+##  Sample Output
 
-  Positive tweets
-  
-  Negative tweets
-  
-  Neutral tweets
+-  Sentiment distribution plot for a brand (e.g., Facebook)
+-  WordClouds for Positive, Negative, and Neutral tweets
 
-How to Run
+---
 
-Open the notebook in Google Colab
+##  How to Run
 
-Upload the twitter_training.csv file when prompted
+1. Open the notebook in **Google Colab**.
+2. Upload the `twitter_training.csv` file when prompted.
+3. Change the `brand_name` variable to analyze a different brand.
+4. Run all cells to view visualizations and sentiment classification.
 
-Run all cells to see the sentiment visualizations
+---
